@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #aec096; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.App {
+  text-align: center;
+  max-width: 800px; 
+  width: 100%; 
+  padding: 0 15px; 
+}
+h1 {
+  color: #333;
+  margin-bottom: 1rem; 
+  font-size: 2rem;
+}
+
+.TodoWrapper {
+  background: #fff; 
+  margin-top: 2rem; 
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  width: 800px; 
+}
+
+
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1.5rem; 
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 2px solid #8758ff;
+  padding: 0.75rem 1rem; 
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; 
+  width: 100%;
+  color: #333;
+  border-radius: 5px; 
+  transition: border-color 0.3s; 
+}
+
+.todo-input::placeholder {
+  color: #999; 
+}
+
+.todo-btn {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem; 
+  cursor: pointer;
+  border-radius: 5px; 
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.todo-btn:hover {
+  background: #7c48e8; 
+}
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  color: #333; 
+  padding: 1rem;
+  border-radius: 5px; 
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fa-trash {
+  margin-left: 0.75rem;
+  color: #e74c3c; 
+  transition: color 0.3s;
+}
+
+.fa-trash:hover {
+  color: #c0392b; 
+}
+
+.incompleted,
+.completed {
+  cursor: pointer;
+}
+
+.completed {
+  color: #26851d;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+  opacity: 0.8; 
+}
+
+.modal-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.confirm-btn,
+.cancel-btn {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: inline-block; 
+}
+.close-btn,
+.confirm-btn,
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.confirm-btn:hover,
+.cancel-btn:hover {
+  background-color: #cf2020;
+  color: #fff;
+}
+
+.todo-header {
+  color: #466cbe;
+  font-size: 2rem; 
+  text-align: center; 
+  margin-bottom: 2rem; 
+}
+.todo-list {
+  max-height: 400px; /* Đặt chiều cao tối đa của danh sách todo */
+  overflow-y: auto; /* Tạo ra thanh cuộn dọc nếu nội dung vượt quá kích thước */
+}
+
+/* Tuỳ chỉnh kiểu cuộn */
+.todo-list::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng của thanh cuộn */
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* Màu nền của thanh cuộn */
+  border-radius: 4px; /* Bo tròn góc của thanh cuộn */
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Màu nền của thanh cuộn khi di chuột qua */
+}
